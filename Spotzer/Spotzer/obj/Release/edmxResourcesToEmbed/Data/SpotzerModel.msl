@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SpotzerModelStoreContainer" CdmEntityContainer="SpotzerEntities">
+    <EntitySetMapping Name="tbl_adwordcampaign">
+      <EntityTypeMapping TypeName="SpotzerModel.tbl_adwordcampaign">
+        <MappingFragment StoreEntitySet="tbl_adwordcampaign">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="DestinationURL" ColumnName="DestinationURL" />
+          <ScalarProperty Name="Offer" ColumnName="Offer" />
+          <ScalarProperty Name="UniqueSellingPoint3" ColumnName="UniqueSellingPoint3" />
+          <ScalarProperty Name="UniqueSellingPoint2" ColumnName="UniqueSellingPoint2" />
+          <ScalarProperty Name="UniqueSellingPoint1" ColumnName="UniqueSellingPoint1" />
+          <ScalarProperty Name="SMSPhoneNumber" ColumnName="SMSPhoneNumber" />
+          <ScalarProperty Name="LeadPhoneNumber" ColumnName="LeadPhoneNumber" />
+          <ScalarProperty Name="CampaignRadius" ColumnName="CampaignRadius" />
+          <ScalarProperty Name="CampaignPostCode" ColumnName="CampaignPostCode" />
+          <ScalarProperty Name="CampaignAddressLine1" ColumnName="CampaignAddressLine1" />
+          <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+          <ScalarProperty Name="LineItemID" ColumnName="LineItemID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_lineitem">
+      <EntityTypeMapping TypeName="SpotzerModel.tbl_lineitem">
+        <MappingFragment StoreEntitySet="tbl_lineitem">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_order">
+      <EntityTypeMapping TypeName="SpotzerModel.tbl_order">
+        <MappingFragment StoreEntitySet="tbl_order">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="RelatedOrder" ColumnName="RelatedOrder" />
+          <ScalarProperty Name="UDAC" ColumnName="UDAC" />
+          <ScalarProperty Name="ExposureID" ColumnName="ExposureID" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SubmittedBy" ColumnName="SubmittedBy" />
+          <ScalarProperty Name="TypeOfOrder" ColumnName="TypeOfOrder" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Partner" ColumnName="Partner" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_websitedetails">
+      <EntityTypeMapping TypeName="SpotzerModel.tbl_websitedetails">
+        <MappingFragment StoreEntitySet="tbl_websitedetails">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="WebsiteMobile" ColumnName="WebsiteMobile" />
+          <ScalarProperty Name="WebsiteEmail" ColumnName="WebsiteEmail" />
+          <ScalarProperty Name="WebsitePhone" ColumnName="WebsitePhone" />
+          <ScalarProperty Name="WebsitePostCode" ColumnName="WebsitePostCode" />
+          <ScalarProperty Name="WebsiteState" ColumnName="WebsiteState" />
+          <ScalarProperty Name="WebsiteCity" ColumnName="WebsiteCity" />
+          <ScalarProperty Name="WebsiteAddressLine2" ColumnName="WebsiteAddressLine2" />
+          <ScalarProperty Name="WebsiteAddressLine1" ColumnName="WebsiteAddressLine1" />
+          <ScalarProperty Name="WebsiteBusinessName" ColumnName="WebsiteBusinessName" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="LineItemID" ColumnName="LineItemID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

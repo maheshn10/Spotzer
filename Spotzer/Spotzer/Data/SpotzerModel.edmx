@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SpotzerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_adwordcampaign">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LineItemID" Type="int" Nullable="false" />
+          <Property Name="CampaignName" Type="varchar" MaxLength="100" />
+          <Property Name="CampaignAddressLine1" Type="varchar" MaxLength="100" />
+          <Property Name="CampaignPostCode" Type="varchar" MaxLength="100" />
+          <Property Name="CampaignRadius" Type="varchar" MaxLength="100" />
+          <Property Name="LeadPhoneNumber" Type="varchar" MaxLength="100" />
+          <Property Name="SMSPhoneNumber" Type="varchar" MaxLength="100" />
+          <Property Name="UniqueSellingPoint1" Type="varchar" MaxLength="100" />
+          <Property Name="UniqueSellingPoint2" Type="varchar" MaxLength="100" />
+          <Property Name="UniqueSellingPoint3" Type="varchar" MaxLength="100" />
+          <Property Name="Offer" Type="varchar" MaxLength="100" />
+          <Property Name="DestinationURL" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_lineitem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="100" />
+          <Property Name="ProductType" Type="varchar" MaxLength="100" />
+          <Property Name="Notes" Type="varchar" MaxLength="100" />
+          <Property Name="Category" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Partner" Type="varchar" MaxLength="100" />
+          <Property Name="OrderID" Type="varchar" MaxLength="100" />
+          <Property Name="TypeOfOrder" Type="varchar" MaxLength="100" />
+          <Property Name="SubmittedBy" Type="varchar" MaxLength="100" />
+          <Property Name="CompanyID" Type="varchar" MaxLength="100" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+          <Property Name="ContactFirstName" Type="varchar" MaxLength="100" />
+          <Property Name="ContactLastName" Type="varchar" MaxLength="100" />
+          <Property Name="ContactTitle" Type="varchar" MaxLength="100" />
+          <Property Name="ContactPhone" Type="varchar" MaxLength="100" />
+          <Property Name="ContactMobile" Type="varchar" MaxLength="100" />
+          <Property Name="ContactEmail" Type="varchar" MaxLength="100" />
+          <Property Name="ExposureID" Type="varchar" MaxLength="100" />
+          <Property Name="UDAC" Type="varchar" MaxLength="100" />
+          <Property Name="RelatedOrder" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_websitedetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LineItemID" Type="int" Nullable="false" />
+          <Property Name="TemplateId" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteBusinessName" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteAddressLine1" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteAddressLine2" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteCity" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteState" Type="varchar" MaxLength="100" />
+          <Property Name="WebsitePostCode" Type="varchar" MaxLength="100" />
+          <Property Name="WebsitePhone" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteEmail" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteMobile" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="SpotzerModelStoreContainer">
+          <EntitySet Name="tbl_adwordcampaign" EntityType="Self.tbl_adwordcampaign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_lineitem" EntityType="Self.tbl_lineitem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_order" EntityType="Self.tbl_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_websitedetails" EntityType="Self.tbl_websitedetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SpotzerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SpotzerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_adwordcampaign" EntityType="SpotzerModel.tbl_adwordcampaign" />
+          <EntitySet Name="tbl_lineitem" EntityType="SpotzerModel.tbl_lineitem" />
+          <EntitySet Name="tbl_order" EntityType="SpotzerModel.tbl_order" />
+          <EntitySet Name="tbl_websitedetails" EntityType="SpotzerModel.tbl_websitedetails" />
+        </EntityContainer>
+        <EntityType Name="tbl_adwordcampaign">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LineItemID" Type="Int32" Nullable="false" />
+          <Property Name="CampaignName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignAddressLine1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignPostCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignRadius" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LeadPhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SMSPhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UniqueSellingPoint1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UniqueSellingPoint2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UniqueSellingPoint3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Offer" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DestinationURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_lineitem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProductType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Partner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrderID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TypeOfOrder" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubmittedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactFirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactMobile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ExposureID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UDAC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RelatedOrder" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_websitedetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LineItemID" Type="Int32" Nullable="false" />
+          <Property Name="TemplateId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteBusinessName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteAddressLine1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteAddressLine2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteState" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsitePostCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsitePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteMobile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SpotzerModelStoreContainer" CdmEntityContainer="SpotzerEntities">
+          <EntitySetMapping Name="tbl_adwordcampaign">
+            <EntityTypeMapping TypeName="SpotzerModel.tbl_adwordcampaign">
+              <MappingFragment StoreEntitySet="tbl_adwordcampaign">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DestinationURL" ColumnName="DestinationURL" />
+                <ScalarProperty Name="Offer" ColumnName="Offer" />
+                <ScalarProperty Name="UniqueSellingPoint3" ColumnName="UniqueSellingPoint3" />
+                <ScalarProperty Name="UniqueSellingPoint2" ColumnName="UniqueSellingPoint2" />
+                <ScalarProperty Name="UniqueSellingPoint1" ColumnName="UniqueSellingPoint1" />
+                <ScalarProperty Name="SMSPhoneNumber" ColumnName="SMSPhoneNumber" />
+                <ScalarProperty Name="LeadPhoneNumber" ColumnName="LeadPhoneNumber" />
+                <ScalarProperty Name="CampaignRadius" ColumnName="CampaignRadius" />
+                <ScalarProperty Name="CampaignPostCode" ColumnName="CampaignPostCode" />
+                <ScalarProperty Name="CampaignAddressLine1" ColumnName="CampaignAddressLine1" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="LineItemID" ColumnName="LineItemID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_lineitem">
+            <EntityTypeMapping TypeName="SpotzerModel.tbl_lineitem">
+              <MappingFragment StoreEntitySet="tbl_lineitem">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_order">
+            <EntityTypeMapping TypeName="SpotzerModel.tbl_order">
+              <MappingFragment StoreEntitySet="tbl_order">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="RelatedOrder" ColumnName="RelatedOrder" />
+                <ScalarProperty Name="UDAC" ColumnName="UDAC" />
+                <ScalarProperty Name="ExposureID" ColumnName="ExposureID" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="ContactMobile" ColumnName="ContactMobile" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+                <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="SubmittedBy" ColumnName="SubmittedBy" />
+                <ScalarProperty Name="TypeOfOrder" ColumnName="TypeOfOrder" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Partner" ColumnName="Partner" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_websitedetails">
+            <EntityTypeMapping TypeName="SpotzerModel.tbl_websitedetails">
+              <MappingFragment StoreEntitySet="tbl_websitedetails">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="WebsiteMobile" ColumnName="WebsiteMobile" />
+                <ScalarProperty Name="WebsiteEmail" ColumnName="WebsiteEmail" />
+                <ScalarProperty Name="WebsitePhone" ColumnName="WebsitePhone" />
+                <ScalarProperty Name="WebsitePostCode" ColumnName="WebsitePostCode" />
+                <ScalarProperty Name="WebsiteState" ColumnName="WebsiteState" />
+                <ScalarProperty Name="WebsiteCity" ColumnName="WebsiteCity" />
+                <ScalarProperty Name="WebsiteAddressLine2" ColumnName="WebsiteAddressLine2" />
+                <ScalarProperty Name="WebsiteAddressLine1" ColumnName="WebsiteAddressLine1" />
+                <ScalarProperty Name="WebsiteBusinessName" ColumnName="WebsiteBusinessName" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="LineItemID" ColumnName="LineItemID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

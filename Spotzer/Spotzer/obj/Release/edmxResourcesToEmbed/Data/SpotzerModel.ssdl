@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpotzerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_adwordcampaign">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineItemID" Type="int" Nullable="false" />
+    <Property Name="CampaignName" Type="varchar" MaxLength="100" />
+    <Property Name="CampaignAddressLine1" Type="varchar" MaxLength="100" />
+    <Property Name="CampaignPostCode" Type="varchar" MaxLength="100" />
+    <Property Name="CampaignRadius" Type="varchar" MaxLength="100" />
+    <Property Name="LeadPhoneNumber" Type="varchar" MaxLength="100" />
+    <Property Name="SMSPhoneNumber" Type="varchar" MaxLength="100" />
+    <Property Name="UniqueSellingPoint1" Type="varchar" MaxLength="100" />
+    <Property Name="UniqueSellingPoint2" Type="varchar" MaxLength="100" />
+    <Property Name="UniqueSellingPoint3" Type="varchar" MaxLength="100" />
+    <Property Name="Offer" Type="varchar" MaxLength="100" />
+    <Property Name="DestinationURL" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_lineitem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="varchar" MaxLength="100" />
+    <Property Name="ProductType" Type="varchar" MaxLength="100" />
+    <Property Name="Notes" Type="varchar" MaxLength="100" />
+    <Property Name="Category" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Partner" Type="varchar" MaxLength="100" />
+    <Property Name="OrderID" Type="varchar" MaxLength="100" />
+    <Property Name="TypeOfOrder" Type="varchar" MaxLength="100" />
+    <Property Name="SubmittedBy" Type="varchar" MaxLength="100" />
+    <Property Name="CompanyID" Type="varchar" MaxLength="100" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+    <Property Name="ContactFirstName" Type="varchar" MaxLength="100" />
+    <Property Name="ContactLastName" Type="varchar" MaxLength="100" />
+    <Property Name="ContactTitle" Type="varchar" MaxLength="100" />
+    <Property Name="ContactPhone" Type="varchar" MaxLength="100" />
+    <Property Name="ContactMobile" Type="varchar" MaxLength="100" />
+    <Property Name="ContactEmail" Type="varchar" MaxLength="100" />
+    <Property Name="ExposureID" Type="varchar" MaxLength="100" />
+    <Property Name="UDAC" Type="varchar" MaxLength="100" />
+    <Property Name="RelatedOrder" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_websitedetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineItemID" Type="int" Nullable="false" />
+    <Property Name="TemplateId" Type="varchar" MaxLength="100" />
+    <Property Name="WebsiteBusinessName" Type="varchar" MaxLength="100" />
+    <Property Name="WebsiteAddressLine1" Type="varchar" MaxLength="100" />
+    <Property Name="WebsiteAddressLine2" Type="varchar" MaxLength="100" />
+    <Property Name="WebsiteCity" Type="varchar" MaxLength="100" />
+    <Property Name="WebsiteState" Type="varchar" MaxLength="100" />
+    <Property Name="WebsitePostCode" Type="varchar" MaxLength="100" />
+    <Property Name="WebsitePhone" Type="varchar" MaxLength="100" />
+    <Property Name="WebsiteEmail" Type="varchar" MaxLength="100" />
+    <Property Name="WebsiteMobile" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="SpotzerModelStoreContainer">
+    <EntitySet Name="tbl_adwordcampaign" EntityType="Self.tbl_adwordcampaign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_lineitem" EntityType="Self.tbl_lineitem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_order" EntityType="Self.tbl_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_websitedetails" EntityType="Self.tbl_websitedetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
